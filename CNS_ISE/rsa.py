@@ -21,3 +21,8 @@ def gcd(a, b):
     return a
 
 rsa(11, 13, 9)
+
+def decrypt(cipher, d, n):
+    return pow(cipher, d, n)
+
+print(decrypt(2790, 103, 3233))

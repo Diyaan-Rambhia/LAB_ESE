@@ -8,3 +8,18 @@ def mono(text, uid):
     return "".join(table.get(c, c) for c in text.upper())
 
 print(mono("HELLO", 1234567890))
+
+letters = "abcdefghijklmnopqrstuvwxyz"
+
+def decrypt(cipher, key):
+    result = ""
+
+    for ch in cipher.lower():
+        if ch in key:
+            result += letters[key.index(ch)]
+        else:
+            result += ch
+
+    return result
+
+print(decrypt("qnuux", "qwertyuiopasdfghjklzxcvbnm"))

@@ -1,15 +1,35 @@
 def vigenere(text, key):
+    letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     result = ""
-    key = key.upper()
     j = 0
 
     for ch in text.upper():
         if ch.isalpha():
-            shift = ord(key[j % len(key)]) - 65
-            result += chr((ord(ch)-65+shift) % 26 + 65)
+            shift = letters.index(key[j % len(key)].upper())
+            result += letters[(letters.index(ch) + shift) % 26]
             j += 1
         else:
             result += ch
+
     return result
 
 print(vigenere("HELLO", "KEY"))
+
+letters = "abcdefghijklmnopqrstuvwxyz"
+
+def decrypt(cipher, key):
+    result = ""
+    j = 0
+
+    for ch in cipher.lower():
+        if ch in letters:
+            a = letters.index(ch)
+            b = letters.index(key[j % len(key)].lower())
+            result += letters[(a - b) % 26]
+            j += 1
+        else:
+            result += ch
+
+    return result
+
+print(decrypt("lxfopvefrnhr", "lemon"))

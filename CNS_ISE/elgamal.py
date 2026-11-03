@@ -12,3 +12,13 @@ def elgamal(p, g, x, k, message):
     print("Decrypted:", decrypted)
 
 elgamal(23, 5, 6, 3, 10)
+
+def decrypt(cipher, x, p):
+    c1, c2 = cipher
+
+    shared = pow(c1, x, p)
+    inverse = pow(shared, -1, p)
+
+    return (c2 * inverse) % p
+
+print(decrypt((8, 13), 6, 23))

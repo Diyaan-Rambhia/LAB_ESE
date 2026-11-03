@@ -37,3 +37,8 @@ def ecc(private_key):
     print("Public key:", public_key)
 
 ecc(7)
+
+def shared_secret(private_key, other_public_key):
+    return multiply(private_key, other_public_key)
+
+print(shared_secret(3, (10, 6)))

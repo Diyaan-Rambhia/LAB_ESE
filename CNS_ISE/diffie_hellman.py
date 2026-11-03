@@ -11,3 +11,8 @@ def diffie_hellman(p, g, a, b):
     print("Bob shared key:", key2)
 
 diffie_hellman(23, 5, 6, 15)
+
+def shared_secret(public_key, private_key, p):
+    return pow(public_key, private_key, p)
+
+print(shared_secret(8, 6, 23))
