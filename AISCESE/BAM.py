@@ -15,5 +15,5 @@ for _ in range(5):
 
 print("Input X: ", X)
 print("Input Y: ", Y)
-print("Input X: ", x)
-print("Input Y: ", y)
+print("Output X: ", x)
+print("Output Y: ", y)
